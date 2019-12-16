@@ -27,13 +27,13 @@ jobs:
     - name: Build binary
       run: |
         make build_linux_amd64
-    - name: Publish to Registry
-      uses: elgohr/Publish-Docker-Github-Action@2.9
-      with:
-        name: appleboy/helloworld
-        username: appleboy
-        password: ${{ secrets.docker_password }}
-        dockerfile: docker/helloworld/Dockerfile.linux.amd64
+    # - name: Publish to Registry
+    #   uses: elgohr/Publish-Docker-Github-Action@2.9
+    #   with:
+    #     name: appleboy/helloworld
+    #     username: appleboy
+    #     password: ${{ secrets.docker_password }}
+    #     dockerfile: docker/helloworld/Dockerfile.linux.amd64
 
     - name: Update the API service
       uses: appleboy/ssh-action@v0.0.6
