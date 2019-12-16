@@ -9,7 +9,7 @@ jobs:
     strategy:
       matrix:
         go-version: [1.13.x]
-        platform: [ubuntu-latest]
+        platform: [centos-latest]
     runs-on: ${{ matrix.platform }}
     # container: golang:1.13
     steps:
