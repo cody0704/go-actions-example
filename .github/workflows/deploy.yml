@@ -9,7 +9,7 @@ jobs:
     strategy:
       matrix:
         go-version: [1.13.x]
-        platform: [centos-latest]
+        platform: [ubuntu-latest]
     runs-on: ${{ matrix.platform }}
     # container: golang:1.13
     steps:
@@ -34,13 +34,12 @@ jobs:
     #     username: appleboy
     #     password: ${{ secrets.docker_password }}
     #     dockerfile: docker/helloworld/Dockerfile.linux.amd64
-
-    - name: Update the API service
-      uses: appleboy/ssh-action@v0.0.6
-      with:
-        host: ${{ secrets.ssh_host }}
-        username: deploy
-        key: ${{ secrets.ssh_key }}
-        script_stop: true
-        script: |
-          cd golang && docker-compose pull && docker-compose up -d
+    # - name: Update the API service
+    #   uses: appleboy/ssh-action@v0.0.6
+    #   with:
+    #     host: ${{ secrets.ssh_host }}
+    #     username: deploy
+    #     key: ${{ secrets.ssh_key }}
+    #     script_stop: true
+    #     script: |
+    #       cd golang && docker-compose pull && docker-compose up -d
