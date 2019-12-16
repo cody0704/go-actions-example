@@ -55,5 +55,5 @@ func pinger(port string) error {
 
 // HelloActions for hello actions
 func HelloActions() string {
-	return "Hello Github Actions, traefik workshop!"
+	return "Trigger the GitHub Actions, traefik workshop!"
 }
